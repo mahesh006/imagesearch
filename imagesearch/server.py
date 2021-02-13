@@ -1,3 +1,4 @@
+import os
 import numpy as np
 from PIL import Image
 from feature_extractor import FeatureExtractor
@@ -41,4 +42,5 @@ def index():
 
 
 if __name__=="__main__":
-    app.run(threaded=True, port=5000)
+    PORT = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=PORT, debug=False)
